@@ -1,0 +1,27 @@
+<h1>Listing peliculas</h1>
+
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Descripcion</th>
+    <th>Categoria</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @peliculas.each do |pelicula| %>
+  <tr>
+    <td><%= pelicula.titulo %></td>
+    <td><%= pelicula.descripcion %></td>
+    <td><%= pelicula.categoria %></td>
+    <td><%= link_to 'Show', pelicula %></td>
+    <td><%= link_to 'Edit', edit_pelicula_path(pelicula) %></td>
+    <td><%= link_to 'Destroy', pelicula, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pelicula', new_pelicula_path %>

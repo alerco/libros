@@ -1,0 +1,25 @@
+<h1>Listing modelo1s</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @modelo1s.each do |modelo1| %>
+  <tr>
+    <td><%= modelo1.nombre %></td>
+    <td><%= modelo1.apellido %></td>
+    <td><%= link_to 'Show', modelo1 %></td>
+    <td><%= link_to 'Edit', edit_modelo1_path(modelo1) %></td>
+    <td><%= link_to 'Destroy', modelo1, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Modelo1', new_modelo1_path %>
